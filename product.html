@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoptime</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="build/all.css" type="text/css">
+</head>
+
+<body>
+    <header id="js-header"></header>
+    <div class="container py-6">
+        <div class="d-flex justify-content-between align-items-center pb-3">
+            <div class="d-flex align-items-center pl-3">
+                <label class="form_check">
+                    <input type="checkbox" value="">
+                    <span></span>
+                </label>
+                <div class="dropdown">
+                    <button
+                        class="btn btn-link btn-lg text-darkGrey dropdown_toggle_btn dropdown_toggle_btn_icon-dark p-0"
+                        type="button" data-toggle="dropdown"></button>
+                    <div class="dropdown_menu">
+                        <a class="dropdown_menu_item" href="#">Select All</a>
+                        <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Unselect All</a>
+                        <a class="dropdown_menu_item" href="#">Paid</a>
+                        <a class="dropdown_menu_item" href="#">Unpaid</a>
+                        <a class="dropdown_menu_item" href="#">Shipping</a>
+                        <a class="dropdown_menu_item" href="#">Done</a>
+                    </div>
+                </div>
+                <a href="#" class="text-dark px-3" data-toggle="tooltip" title="Change Status"><i
+                        class="fa-solid fa-tags"></i></a>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-dark" type="button">ADD NEW PRODUCT<i class="fa-solid fa-plus pl-2"></i></button>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"><span class="pl-5">Product</span></th>
+                    <th scope="col">Original</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Inventory</th>
+                    <th scope="col" align="left">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 1 -->
+                <tr>
+                    <td rowspan="3">
+                        <label class="form_check form_check-bgWhite">
+                            <input type="checkbox" value="" id="tableCheck1">
+                            <span></span><label for="tableCheck1">Ian Medina</label>
+                        </label>
+                    </td>
+                    <td rowspan="3">$3,200</td>
+                    <td rowspan="3">$2,800</td>
+                    <td class="border-bottom-1 border-white pb-2">L</td>
+                    <td class="border-bottom-1 border-white pb-2">Gray<br />Black</td>
+                    <td class="border-bottom-1 border-white pb-2">15<br />20</td>
+                    <td rowspan="3" valign="bottom">
+                        123
+                        <!-- <div class="dropdown">
+                            <button class="btn btn-success dropdown_toggle_btn" type="button"
+                                data-toggle="dropdown">PUBLISHED</button>
+                            <div class="dropdown_menu">
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Published</a>
+                                <a class="dropdown_menu_item" href="#">Unpublished</a>
+                            </div>
+                        </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-bottom-1 border-white py-2">M</td>
+                    <td class="border-bottom-1 border-white py-2">Gray<br />Black</td>
+                    <td class="border-bottom-1 border-white py-2">15<br />20</td>
+                </tr>
+                <tr>
+                    <td class="pt-2">S</td>
+                    <td class="pt-2">Gray<br />Black</td>
+                    <td class="pt-2">15<br />20</td>
+                </tr>
+            </tbody>
+        </table>
+        <nav class="pagination py-6">
+            <a class="pagination_item_link pagination_item_link-disabled" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+            <a class="pagination_item_link pagination_item_link-active" href="#">1</a>
+            <a class="pagination_item_link" href="#">2</a>
+            <a class="pagination_item_link" href="#">3</a>
+            <a class="pagination_item_link" href="#">4</a>
+            <a class="pagination_item_link" href="#">5</a>
+            <a class="pagination_item_link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </nav>
+    </div>
+    <script src="https://kit.fontawesome.com/e977eaa2d8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="js/load-html.js"></script>
+</body>
+
+</html>

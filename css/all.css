@@ -912,18 +912,26 @@ label.form_check input[type='checkbox']:checked ~ span:after {
   transform: rotate(45deg);
 }
 
-label.form_check input[type='checkbox']:not(:checked) ~ span.form_check-bgTransparent {
-  background-color: transparent;
-}
-
 label.form_check input[type='checkbox'] ~ span {
   cursor: pointer;
   width: 15px;
   height: 15px;
   display: block;
-  background-color: #ffffff;
+  background-color: transparent;
   border-radius: 3px;
   border: 1px solid #000000;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+label.form_check.form_check-bgWhite input[type='checkbox']:checked ~ span {
+  background-color: #9b9b9b;
+  border-color: #9b9b9b;
+}
+
+label.form_check.form_check-bgWhite input[type='checkbox'] ~ span {
+  background-color: #ffffff;
+  border-color: #ffffff;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -941,11 +949,15 @@ label.form_check label {
 .dropdown .dropdown_toggle_btn::after {
   margin-left: 0.5rem;
   font: var(--fa-font-solid);
-  content: "\f0d7";
+  content: '\f0d7';
 }
 
 .dropdown .dropdown_toggle_btn.dropdown_toggle_btn_icon-dark::after {
   color: #000000;
+}
+
+.dropdown .dropdown_toggle_btn.dropdown_toggle_btn_icon-hide::after {
+  display: none;
 }
 
 .dropdown .dropdown_menu {
@@ -1133,10 +1145,57 @@ label.form_check label {
   color: #ffffff;
 }
 
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-family: "HelveticaNeue";
+}
+
+.pagination .pagination_item_link {
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ebebeb;
+  margin-left: -1px;
+}
+
+.pagination .pagination_item_link:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.pagination .pagination_item_link:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.pagination .pagination_item_link.pagination_item_link-active, .pagination .pagination_item_link:hover:not(.pagination_item_link-disabled) {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.pagination .pagination_item_link.pagination_item_link-disabled {
+  cursor: default;
+  color: #757575;
+}
+
 .table {
   width: 100%;
   color: #000000;
   font-family: "HelveticaNeue";
+}
+
+@media (max-width: 991px) {
+  .table {
+    overflow-x: auto;
+    display: block;
+  }
 }
 
 .table th {
@@ -1193,7 +1252,7 @@ label.form_check label {
 }
 
 .ui-tooltip_arrow:after {
-  content: "";
+  content: '';
   position: absolute;
   left: 20px;
   top: -20px;

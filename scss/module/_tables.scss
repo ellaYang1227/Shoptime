@@ -2,8 +2,11 @@
     width: 100%;
     color: $table-color;
     font-family: $table-font-family;
-    overflow-x: auto;
-    display: block;
+
+    @include media-breakpoint-down(lg) {
+        overflow-x: auto;
+        display: block;
+    }
 
     th {
         padding: $table-th-y-cell-padding;

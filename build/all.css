@@ -889,8 +889,12 @@ label.form_check label {
   width: 100%;
   color: #000000;
   font-family: "HelveticaNeue";
-  overflow-x: auto;
-  display: block;
+}
+@media (max-width: 991px) {
+  .table {
+    overflow-x: auto;
+    display: block;
+  }
 }
 .table th {
   padding: 0.625rem 1rem;
