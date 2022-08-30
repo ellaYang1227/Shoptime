@@ -1,0 +1,60 @@
+// 文字顏色
+// .text-{$theme-key}
+// {$theme-key}：為 $theme 設定之色系，如 primary、success、warning、danger、white、dark...等
+.text- {
+    @each $theme-key, $theme-value in $theme {
+        &#{$theme-key} {
+            @include rule(
+                $property-data: (
+                    'color': $theme-value
+                )
+            );
+        }
+    }
+}
+
+// 連結文字
+a {
+    // 樣式
+    // .text-{$theme-key}
+    // {$theme-key}：為 $theme 設定之色系，如 primary、success、warning、danger、white、dark...等
+    &.text- {
+        @each $theme-key, $theme-value in $theme {
+            &#{$theme-key} {
+                &:hover,
+                &:focus {
+                    @include rule(
+                        $property-data: (
+                            'color':
+                                darken($theme-value, $link-hover-color-darken)
+                        )
+                    );
+                }
+            }
+        }
+    }
+
+    // 停用
+    &.disabled {
+        pointer-events: none;
+    }
+}
+
+// 背景顏色
+// .bg-{$theme-key}
+// {$theme-key}：為 $theme 設定之色系，如 primary、success、warning、danger、white、dark...等
+.bg- {
+    @each $theme-key, $theme-value in $theme {
+        &#{$theme-key} {
+            @include rule(
+                $property-data: (
+                    'background-color': $theme-value
+                )
+            );
+        }
+    }
+
+    &transparent {
+        background-color: transparent !important;
+    }
+}

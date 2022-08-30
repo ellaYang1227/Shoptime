@@ -1,0 +1,62 @@
+// 同一個 class name 但在不同斷點時，屬性值會改變
+// $breakpoint-key：斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+// $property-data：屬性名稱和值
+// $add-important：是否加入 !important
+@mixin change-RWD-property-value($breakpoint-key, $property-data, $add-important: false) {
+    @each $property, $property-value in $property-data {
+        @if($breakpoint-key == "xs"){
+            #{$property}: #{$property-value + if($add-important, " !important","")};
+        } @else {
+            @media (min-width: map-get($grid-breakpoints, $breakpoint-key)) {
+                #{$property}: #{$property-value + if($add-important, " !important","")};
+            }
+        }
+    }  
+}
+
+// class name 內包含斷點尺寸名稱($breakpoint-key)與指數($index)；不同 class name 其屬性值在不同斷點時互相覆蓋
+// $index：指數
+// $breakpoint-key：斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+// $property-data：屬性名稱和值
+// $add-important：是否加入 !important
+@mixin RWD-class-name($index, $breakpoint-key, $property-data, $add-important: false) {
+    @if($breakpoint-key == "xs"){
+        &#{$index}{
+            @each $property, $property-value in $property-data {
+                #{$property}: #{$property-value + if($add-important, " !important","")};
+            }
+        }  
+    } @else {
+        @media (min-width: map-get($grid-breakpoints, $breakpoint-key)) {
+            &#{$breakpoint-key + if($index == "" , $index , "-" + $index)}{
+                @each $property, $property-value in $property-data {
+                    #{$property}: #{$property-value + if($add-important, " !important","")};
+                }
+            }
+        }
+    }
+}
+
+// 無 RWD 功能的 class name
+// $property-data：屬性名稱和值
+@mixin rule($property-data) {
+    @each $property, $property-value in $property-data {
+        #{$property}: #{$property-value + " !important"};
+    }  
+}
+
+// 斷點 以上
+// $breakpoint：斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+@mixin media-breakpoint-up($breakpoint){
+    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+// 斷點 以下
+// $breakpoint：斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+@mixin media-breakpoint-down($breakpoint){
+    @media (max-width: (map-get($grid-breakpoints, $breakpoint) - 1)) {
+        @content;
+    }
+}

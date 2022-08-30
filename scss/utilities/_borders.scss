@@ -1,0 +1,44 @@
+// 邊框
+// .{$border-direction}-{$breakpoint-key(可省略)}-{$index}
+// {$border-direction}：表示邊框屬性設定
+// {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+// {$index}：表示邊框 width 尺寸，值為 0 或 1
+
+$border-directions: 'border', 'border-top', 'border-bottom', 'border-left',
+    'border-right';
+
+@each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+    @each $border-direction in $border-directions {
+        @for $index from 0 through 1 {
+            .#{$border-direction}- {
+                @include RWD-class-name(
+                    $index,
+                    $breakpoint-key,
+                    $property-data: (
+                        #{$border-direction}: ($index + px) #{if(
+                                $index == 0,
+                                '',
+                                $border-style-base $border-color-base
+                            )}
+                    ),
+                    $add-important: ture
+                );
+            }
+        }
+    }
+}
+
+// 邊框顏色
+// .border-{$theme-key}
+// {$theme-key}：為 $theme 設定之色系，如 primary、success、warning、danger、white、dark...等
+.border- {
+    @each $theme-key, $theme-value in $theme {
+        &#{$theme-key} {
+            @include rule(
+                $property-data: (
+                    'border-color': $theme-value
+                )
+            );
+        }
+    }
+}

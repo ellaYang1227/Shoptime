@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoptime</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="build/all.css" type="text/css">
+</head>
+
+<body>
+    <header id="js-header"></header>
+    <div class="container py-6">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h4">OVERVIEW</h1>
+            <ul class="font-family-HelveticaNeue-Medium text-darkGrey d-flex align-items-center">
+                <li>2018/6/6<i class="fa-solid fa-caret-right mx-2 text-dark"></i>2018/6/13</li>
+                <li class="dropdown">
+                    <button
+                        class="btn btn-link btn-lg text-darkGrey dropdown_toggle_btn dropdown_toggle_btn_icon-dark font-family-HelveticaNeue-Medium py-0 pr-0 pl-4"
+                        type="button" data-toggle="dropdown">Weekly</button>
+                    <div class="dropdown_menu dropdown_menu-position-right">
+                        <a class="dropdown_menu_item" href="#">Daily</a>
+                        <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Weekly</a>
+                        <a class="dropdown_menu_item" href="#">Monthly</a>
+                        <a class="dropdown_menu_item" href="#">Yearly</a>
+                        <a class="dropdown_menu_item" href="#">Custom</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <div class="card">
+                    <h4 class="h6 font-family-HelveticaNeue-Medium"><i
+                            class="fa-solid fa-hand-holding-dollar pr-2"></i>TOTAL REVENUE</h4>
+                    <strong class="font-family-HelveticaNeue-Bold text-success font-size-36">54,540</strong>
+                </div>
+            </div>
+            <div class="col text-center">
+                <div class="card">
+                    <h4 class="h6 font-family-HelveticaNeue-Medium"><i class="fa-solid fa-boxes-stacked pr-2"></i>TOTAL
+                        COST</h4>
+                    <strong class="font-family-HelveticaNeue-Bold text-danger font-size-36">12,660</strong>
+                </div>
+            </div>
+            <div class="col-sm text-center mt-4 mt-sm-0">
+                <div class="card">
+                    <h4 class="h6 font-family-HelveticaNeue-Medium"><i class="fa-solid fa-money-bill pr-2"></i>NET
+                        INCOME</h4>
+                    <strong class="font-family-HelveticaNeue-Bold text-primary font-size-36">54,540</strong>
+                </div>
+            </div>
+            <!-- Activity -->
+            <div class="col-12 my-4">
+                <div class="card">
+                    <h3 class="card_title">Activity</h3>
+                    <div id="js-echarts" class="echarts-height"></div>
+                </div>
+            </div>
+            <!-- Transaction Website -->
+            <div class="col-md-6">
+                <div class="card pb-0 h-100">
+                    <h3 class="card_title">Transaction Website</h3>
+                    <ul class="list_group">
+                        <li class="list_group_item d-flex align-items-center"><i
+                                class="fab fa-facebook-square fa-3x text-dark"></i><span
+                                class="pl-4">Facebook.com</span>
+                            <div class="ml-auto text-dark">45,836<span class="text-success pl-4"><a href="#"
+                                        class="text-success" data-toggle="tooltip" data-html="true"
+                                        title="<div>INCREASE<span class='text-success font-family-HelveticaNeue-Bold font-size-20'> 899 </span>VIEW<span class='d-block font-family-HelveticaNeue-Italic text-darkGrey'>Slast week: 44,937</span></div>"><i
+                                            class="fas fa-arrow-up mx-1"></i>20%</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="list_group_item d-flex align-items-center"><i
+                                class="fab fa-google fa-3x text-dark"></i><span class="pl-4">google.com</span>
+                            <div class="ml-auto text-dark">23,582<span class="text-success pl-4"><i
+                                        class="fas fa-arrow-up mx-1"></i>12%</span>
+                            </div>
+                        </li>
+                        <li class="list_group_item d-flex align-items-center"><i
+                                class="fab fa-shopify fa-3x text-dark"></i><span class="pl-4">Shopify.com</span>
+                            <div class="ml-auto text-dark">2,489<span class="text-danger pl-4"><i
+                                        class="fas fa-arrow-down mx-1"></i>15%</span>
+                            </div>
+                        </li>
+                        <li class="list_group_item d-flex align-items-center"><i
+                                class="fab fa-wordpress fa-3x text-dark"></i><span class="pl-4">Wordpress.com</span>
+                            <div class="ml-auto text-dark">1,057<span class="text-danger pl-4"><i
+                                        class="fas fa-arrow-down mx-1"></i>30%</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Latest Orders -->
+            <div class="col-md-6">
+                <div class="card pb-0 h-100">
+                    <h3 class="card_title">Latest Orders</h3>
+                    <ul class="list_group">
+                        <li class="list_group_item py-2 d-flex align-items-center">
+                            <img src="https://picsum.photos/id/1057/100" alt="Vintage T-shirt">
+                            <ul class="pl-4 font-family-HelveticaNeue flex-fill">
+                                <li>
+                                    <h2 class="font-family-HelveticaNeue-Bold font-size-20">Vintage T-shirt</h2>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="fas fa-clock fa-xs fa-fw mr-1"></i>2018/6/13
+                                    13:42<span class="ml-auto text-dark">Total</span>
+                                </li>
+                                <li class="d-flex align-items-center"><i class="fas fa-male fa-xs fa-fw mr-1"></i>Belle
+                                    Willis<span
+                                        class="ml-auto text-dark font-family-HelveticaNeue-Bold font-size-20">3,200</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list_group_item py-2 d-flex align-items-center">
+                            <img src="https://picsum.photos/id/237/100" alt="Cowboy Jacket">
+                            <ul class="pl-4 font-family-HelveticaNeue flex-fill">
+                                <li>
+                                    <h2 class="font-family-HelveticaNeue-Bold font-size-20">Cowboy Jacket</h2>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="fas fa-clock fa-xs fa-fw mr-1"></i>2018/6/13 10:45<span
+                                        class="ml-auto text-dark">Total</span>
+                                </li>
+                                <li class="d-flex align-items-center"><i class="fas fa-male fa-xs fa-fw mr-1"></i>Adrian
+                                    Cummings<span
+                                        class="ml-auto text-dark font-family-HelveticaNeue-Bold font-size-20">2,800</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list_group_item py-2 d-flex align-items-center">
+                            <img src="https://picsum.photos/id/179/100" alt="Coach Coat">
+                            <ul class="pl-4 font-family-HelveticaNeue flex-fill">
+                                <li>
+                                    <h2 class="font-family-HelveticaNeue-Bold font-size-20">Coach Coat</h2>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="fas fa-clock fa-xs fa-fw mr-1"></i>2018/6/13 8:26<span
+                                        class="ml-auto text-dark">Total</span>
+                                </li>
+                                <li class="d-flex align-items-center"><i class="fas fa-male fa-xs fa-fw mr-1"></i>Lura
+                                    Holland<span
+                                        class="ml-auto text-dark font-family-HelveticaNeue-Bold font-size-20">1,600</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/e977eaa2d8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="js/load-html.js"></script>
+</body>
+
+</html>

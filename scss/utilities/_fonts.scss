@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "HelveticaNeue-Bold";
+  src: url(../fonts/HelveticaNeue-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "HelveticaNeue-Medium";
+  src: url(../fonts/HelveticaNeue-Medium.otf) format("opentype");
+}
+
+
+@font-face {
+  font-family: "HelveticaNeue-Italic";
+  src: url(../fonts/HelveticaNeue-Italic.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url(../fonts/HelveticaNeue.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url(../fonts/Helvetica-Bold.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url(../fonts/Helvetica.ttf) format("opentype");
+}
+
+// 字體
+// .font-family-{$font-family-key}
+// $font-family-key：字體名稱(參照 _variables.scss 檔案內 $font-familys 的設定)
+.font-family- {
+  @each $font-family-key, $font-family-value in $font-familys {
+    &#{$font-family-key} {
+      font-family: $font-family-value !important;
+    }
+  }
+}
+
+// 字體大小
+// .font-size-{$breakpoint-key}-{$index}
+// {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+// {$index}：字體由 rem 轉換成 px 的大小
+.font-size- {
+    @each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+        @for $index from 8 through 48 {
+            @if ($index % 2 == 0) {
+                @include RWD-class-name(
+                    $index,
+                    $breakpoint-key,
+                    $property-data: (font-size: calc($index / 16) + "rem"),
+                    $add-important: ture
+                );
+            }
+        }
+    }
+}

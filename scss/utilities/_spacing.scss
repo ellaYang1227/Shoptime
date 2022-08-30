@@ -1,0 +1,64 @@
+// 間距
+// .{$property-key}{$spacing-direction-key(可省略)}-{$breakpoint-key(可省略)}-{$spacing-key}
+// {$property-key}：表示屬性設定，值為 m、p
+// {$spacing-direction-key}：設定 margin 或 padding 方向，空白為上下左右、x 為上下、y為左右、t 為上、b 為下、l 為左、r 為右
+// {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+// {$spacing-key}：設定 margin 或 padding 間距大小；變數為 0~5、auto(參照 _variables.scss 檔案內 $spacings 的設定)
+
+$spacing-propertys: (
+    m: "margin",
+    p: "padding",
+) !default;
+
+$spacing-directions: (
+    "": "",
+    x: "left right",
+    y: "top bottom",
+    t: "top",
+    b: "bottom",
+    l: "left",
+    r: "right",
+) !default;
+
+@each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+    @each $property-key, $spacing-property-value in $spacing-propertys {
+        @each $spacing-direction-key, $spacing-direction-value in $spacing-directions {
+            @each $spacing-key, $spacing-value in $spacings {
+                .#{$property-key + $spacing-direction-key}-{
+                    @if($spacing-direction-key == "x" or $spacing-direction-key == "y"){
+                        @if($spacing-direction-key == "x"){
+                            @include RWD-class-name(
+                                $spacing-key,
+                                $breakpoint-key,
+                                $property-data: (
+                                    $spacing-property-value + "-" + map-get($spacing-directions, "l"): $spacing-value,
+                                    $spacing-property-value + "-" + map-get($spacing-directions, "r"): $spacing-value
+                                ),
+                                $add-important: ture
+                            )
+                        }@else{
+                            @include RWD-class-name(
+                                $spacing-key,
+                                $breakpoint-key,
+                                $property-data: (
+                                    $spacing-property-value + "-" + map-get($spacing-directions, "t"): $spacing-value,
+                                    $spacing-property-value + "-" + map-get($spacing-directions, "b"): $spacing-value
+                                ),
+                                $add-important: ture
+                            )
+                        }
+                    }@else{
+                        @include RWD-class-name(
+                            $spacing-key,
+                            $breakpoint-key,
+                            $property-data: (
+                                #{$spacing-property-value + if($spacing-direction-key == "", "", "-") + map-get($spacing-directions, $spacing-direction-key)}: $spacing-value
+                            ),
+                            $add-important: ture
+                        )
+                    }
+                } 
+            }
+        } 
+    }
+} 

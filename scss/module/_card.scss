@@ -1,0 +1,14 @@
+.card {
+    padding: $card-padding;
+    background-color: $card-bg;
+    font-family: $card-font-family;
+
+    @include media-breakpoint-up(md) {
+        padding: $card-md-up-padding;
+    }
+
+    .card_title {
+        font-family: $card-title-font-family;
+        font-size: $card-title-font-size;
+    }
+}

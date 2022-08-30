@@ -1,0 +1,19 @@
+.table {
+    width: 100%;
+    color: $table-color;
+    font-family: $table-font-family;
+    overflow-x: auto;
+    display: block;
+
+    th {
+        padding: $table-th-y-cell-padding;
+        background-color: $table-th-bg;
+        font-family: $table-th-font-family;
+    }
+
+    td {
+        padding: $table-cell-padding;
+        font-size: 0.875rem;
+        vertical-align: top;
+    }
+}

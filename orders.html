@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoptime</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="build/all.css" type="text/css">
+</head>
+
+<body>
+    <header id="js-header"></header>
+    <div class="container py-6">
+        <div class="d-flex justify-content-between align-items-center pb-2">
+            <div class="d-flex align-items-center pl-3">
+                <label class="form_check">
+                    <input type="checkbox" value="">
+                    <span></span>
+                </label>
+                <div class="dropdown">
+                    <button
+                        class="btn btn-link btn-lg text-darkGrey dropdown_toggle_btn dropdown_toggle_btn_icon-dark p-0"
+                        type="button" data-toggle="dropdown"></button>
+                    <div class="dropdown_menu">
+                        <a class="dropdown_menu_item" href="#">Select All</a>
+                        <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Unselect All</a>
+                        <a class="dropdown_menu_item" href="#">Paid</a>
+                        <a class="dropdown_menu_item" href="#">Unpaid</a>
+                        <a class="dropdown_menu_item" href="#">Shipping</a>
+                        <a class="dropdown_menu_item" href="#">Done</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-link btn-lg text-dark dropdown_toggle_btn dropdown_toggle_btn_icon-hide py-0"
+                        type="button" data-toggle="dropdown"><i class="fa-solid fa-tags"></i></button>
+                    <div class="dropdown_menu">
+                        <a class="dropdown_menu_item" href="#">Change Status to…</a>
+                        <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Paid</a>
+                        <a class="dropdown_menu_item" href="#">Unpaid</a>
+                        <a class="dropdown_menu_item" href="#">Shipping</a>
+                        <a class="dropdown_menu_item" href="#">Done</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-link text-dark dropdown_toggle_btn dropdown_toggle_btn_icon-dark p-0"
+                    type="button" data-toggle="dropdown">EDIT SECTION</button>
+                <ul class="dropdown_menu dropdown_menu-position-right">
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" id="check1">
+                            <span></span><label for="check1">Order ID</label>
+                        </label>
+                    </li>
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" checked id="check2">
+                            <span></span>
+                            <label for="check2">Customer</label>
+                        </label>
+                    </li>
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" checked id="check3">
+                            <span></span><label for="check3">Product List</label>
+                        </label>
+                    </li>
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" checked id="check4">
+                            <span></span>
+                            <label for="check4">Total</label>
+                        </label>
+                    </li>
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" checked id="check5">
+                            <span></span><label for="check5">Add to Cart</label>
+                        </label>
+                    </li>
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" checked id="check6">
+                            <span></span>
+                            <label for="check6">Check-out</label>
+                        </label>
+                    </li>
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" checked id="check7">
+                            <span></span><label for="check7">Address</label>
+                        </label>
+                    </li>
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" id="check8">
+                            <span></span>
+                            <label for="check8">Phone</label>
+                        </label>
+                    </li>
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" id="check9">
+                            <span></span>
+                            <label for="check9">Emaill</label>
+                        </label>
+                    </li>
+                    <li class="dropdown_menu_item">
+                        <label class="form_check">
+                            <input type="checkbox" value="" checked id="check10">
+                            <span></span>
+                            <label for="check10">Status</label>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Customer</th>
+                    <th scope="col" align="left">Product List</th>
+                    <th scope="col">Total</th>
+                    <th scope="col" align="left">Add to Cart</th>
+                    <th scope="col" align="left">Check-out</th>
+                    <th scope="col" align="left">Address</th>
+                    <th scope="col" align="left">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 1 -->
+                <tr>
+                    <td rowspan="2">
+                        <label class="form_check form_check-bgWhite">
+                            <input type="checkbox" value="" id="tableCheck1">
+                            <span></span><label for="tableCheck1">Ian Medina</label>
+                        </label>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <h2 class="h6 font-family-HelveticaNeue">Vestibulum.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$1,400</span>1</div>
+                    </td>
+                    <td rowspan="2">$2,200</td>
+                    <td rowspan="2">2018/6/8<br />13:39</td>
+                    <td rowspan="2">2018/6/8<br />20:23</td>
+                    <td rowspan="2">386 Windler Drives<br />Apt. 358</td>
+                    <td rowspan="2">
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown_toggle_btn" type="button"
+                                data-toggle="dropdown">PAID</button>
+                            <div class="dropdown_menu">
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Paid</a>
+                                <a class="dropdown_menu_item" href="#">Unpaid</a>
+                                <a class="dropdown_menu_item" href="#">Shipping</a>
+                                <a class="dropdown_menu_item" href="#">Done</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pt-2">
+                        <h2 class="h6 font-family-HelveticaNeue">Fusce vehicu.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$800</span>1</div>
+                    </td>
+                </tr>
+                <!-- 2 -->
+                <tr class="bg-lightGrey200">
+                    <td>
+                        <label class="form_check form_check-bgWhite">
+                            <input type="checkbox" value="" id="tableCheck2">
+                            <span></span><label for="tableCheck2">Manuel Stephens</label>
+                        </label>
+                    </td>
+                    <td>
+                        <h2 class="h6 font-family-HelveticaNeue">Donec facili.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$1,400</span>1</div>
+                    </td>
+                    <td>$1,400</td>
+                    <td>2018/6/8<br />13:39</td>
+                    <td>2018/6/8<br />20:23</td>
+                    <td>531 Orval Mission<br />Suite 134</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown_toggle_btn" type="button"
+                                data-toggle="dropdown">PAID</button>
+                            <div class="dropdown_menu">
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Paid</a>
+                                <a class="dropdown_menu_item" href="#">Unpaid</a>
+                                <a class="dropdown_menu_item" href="#">Shipping</a>
+                                <a class="dropdown_menu_item" href="#">Done</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- 3 -->
+                <tr>
+                    <td rowspan="3">
+                        <label class="form_check form_check-bgWhite">
+                            <input type="checkbox" value="" id="tableCheck3">
+                            <span></span><label for="tableCheck3">Daisy Reynolds</label>
+                        </label>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <h2 class="h6 font-family-HelveticaNeue">Curabitur lo.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$1,400</span>1</div>
+                    </td>
+                    <td rowspan="3">$3,000</td>
+                    <td rowspan="3">2018/6/8<br />13:39</td>
+                    <td rowspan="3">2018/6/8<br />20:23</td>
+                    <td rowspan="3">38 Juston Islands<br />Apt. 012</td>
+                    <td rowspan="3">
+                        <div class="dropdown">
+                            <button class="btn btn-warning dropdown_toggle_btn" type="button"
+                                data-toggle="dropdown">SHIPPING</button>
+                            <div class="dropdown_menu">
+                                <a class="dropdown_menu_item" href="#">Paid</a>
+                                <a class="dropdown_menu_item" href="#">Unpaid</a>
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Shipping</a>
+                                <a class="dropdown_menu_item" href="#">Done</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-bottom-1 border-white py-2">
+                        <h2 class="h6 font-family-HelveticaNeue">Donec facili.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$800</span>1</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pt-2">
+                        <h2 class="h6 font-family-HelveticaNeue">Nam porttito.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$800</span>1</div>
+                    </td>
+                </tr>
+                <!-- 4 -->
+                <tr class="bg-lightGrey200">
+                    <td rowspan="2">
+                        <label class="form_check form_check-bgWhite">
+                            <input type="checkbox" value="" id="tableCheck4">
+                            <span></span><label for="tableCheck4">Daisy Reynolds</label>
+                        </label>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <h2 class="h6 font-family-HelveticaNeue">Lorem ipsum.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$1,400</span>1</div>
+                    </td>
+                    <td rowspan="2">$2,800</td>
+                    <td rowspan="2">2018/6/8<br />13:39</td>
+                    <td rowspan="2">2018/6/8<br />20:23</td>
+                    <td rowspan="2">386 Windler Drives<br />Apt. 358</td>
+                    <td rowspan="2">
+                        <div class="dropdown">
+                            <button class="btn btn-warning dropdown_toggle_btn" type="button"
+                                data-toggle="dropdown">SHIPPING</button>
+                            <div class="dropdown_menu">
+                                <a class="dropdown_menu_item" href="#">Paid</a>
+                                <a class="dropdown_menu_item" href="#">Unpaid</a>
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Shipping</a>
+                                <a class="dropdown_menu_item" href="#">Done</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="bg-lightGrey200">
+                    <td class="pt-2">
+                        <h2 class="h6 font-family-HelveticaNeue">Nam porttito.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$1,400</span>1</div>
+                    </td>
+                </tr>
+                <!-- 5 -->
+                <tr class="text-darkGrey text-decoration-delete">
+                    <td rowspan="2">
+                        <label class="form_check form_check-bgWhite">
+                            <input type="checkbox" value="" id="tableCheck5">
+                            <span></span><label for="tableCheck5">Daisy Reynolds</label>
+                        </label>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <h2 class="h6 font-family-HelveticaNeue text-darkGrey">Mauris non.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$1,400</span>1</div>
+                    </td>
+                    <td rowspan="2">$2,800</td>
+                    <td rowspan="2">2018/6/8<br />13:39</td>
+                    <td rowspan="2">2018/6/8<br />20:23</td>
+                    <td rowspan="2">386 Windler Drives<br />Apt. 358</td>
+                    <td rowspan="2">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown_toggle_btn" type="button"
+                                data-toggle="dropdown">DONE</button>
+                            <div class="dropdown_menu">
+                                <a class="dropdown_menu_item" href="#">Paid</a>
+                                <a class="dropdown_menu_item" href="#">Unpaid</a>
+                                <a class="dropdown_menu_item" href="#">Shipping</a>
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Done</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="text-darkGrey">
+                    <td class="pt-2">
+                        <h2 class="h6 font-family-HelveticaNeue text-darkGrey">Nam porttito.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$1,400</span>1</div>
+                    </td>
+                </tr>
+                <!-- 6 -->
+                <tr class="bg-lightGrey200 text-darkGrey">
+                    <td>
+                        <label class="form_check form_check-bgWhite">
+                            <input type="checkbox" value="" id="tableCheck6">
+                            <span></span><label for="tableCheck6">Daisy Reynolds</label>
+                        </label>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <h2 class="h6 font-family-HelveticaNeue text-darkGrey">Curabitur lo.</h2>
+                        <div class="d-flex"><span class="text-darkGrey mr-auto">$1,400</span>1</div>
+                    </td>
+                    <td>$2,800</td>
+                    <td>2018/6/8<br />13:39</td>
+                    <td></td>
+                    <td>386 Windler Drives<br />Apt. 358</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-darkGrey dropdown_toggle_btn" type="button"
+                                data-toggle="dropdown">UNPAID</button>
+                            <div class="dropdown_menu">
+                                <a class="dropdown_menu_item" href="#">Paid</a>
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Unpaid</a>
+                                <a class="dropdown_menu_item" href="#">Shipping</a>
+                                <a class="dropdown_menu_item" href="#">Done</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav class="pagination py-6">
+            <a class="pagination_item_link pagination_item_link-disabled" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+            <a class="pagination_item_link pagination_item_link-active" href="#">1</a>
+            <a class="pagination_item_link" href="#">2</a>
+            <a class="pagination_item_link" href="#">3</a>
+            <a class="pagination_item_link" href="#">4</a>
+            <a class="pagination_item_link" href="#">5</a>
+            <a class="pagination_item_link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </nav>
+    </div>
+    <script src="https://kit.fontawesome.com/e977eaa2d8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="js/load-html.js"></script>
+</body>
+
+</html>

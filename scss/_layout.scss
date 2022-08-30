@@ -1,0 +1,24 @@
+.container{
+    padding-right: $grid-gutter-width;
+    padding-left: $grid-gutter-width;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
+.container{
+    @each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+        @each $container-key, $container-value in $container-max-widths {
+            @if ($breakpoint-key == $container-key) {
+                @include change-RWD-property-value (
+                    $breakpoint-key,
+                    $property-data: ("max-width": $container-value)
+                );
+            }
+        }
+    }
+}
+
+.echarts-height{
+    height: 310px;
+}

@@ -1,0 +1,28 @@
+// 尺寸
+// .{sizing-property-key}-{$breakpoint-key(可省略)}-{$sizing}
+// {$sizing-property-key}：表示寬(w)或高(h)
+// {$sizing}：表示尺寸
+// {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+
+$sizing-propertys: (
+    w: "width",
+    h: "height"
+) !default;
+$sizings: "25", "50", "75", "100", "auto";
+
+@each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+    @each $sizing-property-key, $sizing-property-value in $sizing-propertys {
+        @each $sizing in $sizings {
+            .#{$sizing-property-key}- {
+                @include RWD-class-name(
+                    $sizing,
+                    $breakpoint-key,
+                    $property-data: (
+                        #{$sizing-property-value}: $sizing + if($sizing == "auto", "", "%")
+                    ),
+                    $add-important: ture
+                );
+            }
+        }
+    }
+}

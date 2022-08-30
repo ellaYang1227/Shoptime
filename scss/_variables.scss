@@ -1,0 +1,199 @@
+// gray-color
+$white: #ffffff !default;
+$gray-100: #f2f2f2 !default;
+$gray-200: #ebebeb !default;
+$gray-300: #c8c8c8 !default;
+$gray-400: #9b9b9b !default;
+$gray-500: #757575 !default;
+$dark: #000000 !default;
+
+// color
+$primary: #4a90e2 !default;
+$success: #7ed321 !default;
+$warning: #f5a623 !default;
+$danger: #d0021b !default;
+
+$theme: (
+    'primary': $primary,
+    'success': $success,
+    'warning': $warning,
+    'danger': $danger,
+    'white': $white,
+    'lightGrey100': $gray-100,
+    'lightGrey200': $gray-200,
+    'lightGrey300': $gray-300,
+    'darkGrey': $gray-400,
+    'dark': $dark
+) !default;
+
+// Body
+$body-bg: $gray-100 !default;
+$body-color: $gray-400 !default;
+
+// Grid
+$grid-columns: 12 !default;
+$grid-gutter-width: 0.625rem !default;
+// $grid-row-columns:            6 !default;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1024px
+) !default;
+
+// container
+$container-max-widths: (
+    xs: 100%,
+    sm: 540px,
+    //36
+    md: 720px,
+    //48
+    lg: 908px,
+    //84
+    xl: 940px //84
+) !default;
+
+// Spacing
+$spacing: 1rem !default;
+$spacings: (
+    0: 0,
+    1: $spacing * 0.25,
+    // 4
+    2: $spacing * 0.5,
+    // 8
+    3: $spacing,
+    // 16
+    4: $spacing * 1.25,
+    // 20
+    5: $spacing * 1.5,
+    // 24
+    6: $spacing * 1.875,
+    // 30
+    7: $spacing * 3,
+    // 48
+    auto: auto
+) !default;
+
+// font-family
+$font-familys: (
+    HelveticaNeue-Bold: 'HelveticaNeue-Bold',
+    HelveticaNeue-Medium: 'HelveticaNeue-Medium',
+    HelveticaNeue-Italic: 'HelveticaNeue-Italic',
+    HelveticaNeue: 'HelveticaNeue',
+    Helvetica-Bold: 'Helvetica-Bold',
+    Helvetica: 'Helvetica'
+) !default;
+
+// font
+$font-family: map-get($font-familys, 'Helvetica') !default;
+$font-size-base: 1rem !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+$font-weight-base: 500 !default;
+
+// line height
+$line-height-base: 1.5 !default;
+
+// h1 ~ h6
+$h1-font-size: $font-size-base * 2.5 !default; //40
+$h2-font-size: $font-size-base * 2 !default; //32
+$h3-font-size: $font-size-base * 1.75 !default; //28
+$h4-font-size: $font-size-base * 1.5 !default; //24
+$h5-font-size: $font-size-base * 1.25 !default; //20
+$h6-font-size: $font-size-base !default; //16
+
+$headings-font-family: map-get($font-familys, 'HelveticaNeue-Bold') !default;
+$headings-color: $dark !default;
+
+//  link
+$link-text-decoration: none !default;
+$link-color: $primary !default;
+$link-hover-color-darken: 15% !default;
+
+// navber
+$navber-bg: $dark !default;
+$navber-color: $white !default;
+$navber-font-family: map-get($font-familys, 'HelveticaNeue-Bold') !default;
+$navber-brand-font-size: $font-size-base * 1.5 !default;
+$navber-brand-padding-x: 3.75rem !default;
+$navber-brand-padding-y: 0.5rem !default;
+$navber-nav-link-color: $gray-400 !default;
+$navber-nav-link-active-color: $white !default;
+$navber-nav-link-padding: 1.25rem !default;
+
+// border
+$border-width-base: 1px !default;
+$border-style-base: solid !default;
+$border-color-base: $gray-200 !default;
+$border-radius-base: 4px !default;
+
+// button
+$button-border-radius: $border-radius-base !default;
+$button-padding: 0.5rem 1rem;
+$button-font-size-base: 0.875rem !default;
+$button-font-size-lg: 1rem !default;
+$button-font-family: map-get($font-familys, 'HelveticaNeue-Bold') !default;
+$button-color: $white !default;
+$button-hover-bg-darken: 15% !default;
+
+// dropdowns
+$dropdown-menu-min-width: 125px !default;
+$dropdown-menu-border-radius: 2px !default;
+$dropdown-menu-bg: $white !default;
+$dropdown-menu-shadow: 1px 2px 10px 0 $gray-400 !default;
+$dropdown-menu-font-family: map-get($font-familys, 'HelveticaNeue') !default;
+$dropdown-menu-item-color: $dark !default;
+$dropdown-menu-item-padding: 0.5rem 1.125rem !default;
+$dropdown-menu-item-active-color: $white !default;
+$dropdown-menu-item-active-bg: $dark !default;
+
+// card
+$card-font-family: map-get($font-familys, 'HelveticaNeue-Medium') !default;
+$card-font-size: 1.25rem !default;
+$card-bg: $white !default;
+$card-padding: 0.5rem 1rem !default;
+$card-md-up-padding: 1.875rem !default;
+$card-title-font-family: map-get($font-familys, 'HelveticaNeue-Bold') !default;
+$card-title-font-size: 1.5rem !default;
+
+// list-group
+$list-group-grid: $border-width-base $border-style-base $border-color-base !default;
+$list-group-item-padding-y: 1.5rem !default;
+
+// tooltip
+$tooltip-bg: $dark !default;
+$tooltip-color: $white !default;
+$tooltip-font-family: map-get($font-familys, 'HelveticaNeue') !default;
+$tooltip-font-size: 0.875rem !default;
+$tooltip-padding: 0.75rem 1rem !default;
+$tooltip-border-radius: $border-radius-base !default;
+
+// forms
+
+// checkbox
+$checkbox-size: 15px !default;
+$checkbox-checked-color: $white !default;
+$checkbox-checked-bg: $dark !default;
+$checkbox-border: $border-width-base $border-style-base $checkbox-checked-bg !default;
+$checkbox-border-radius: 3px !default;
+
+// table
+$table-font-family: map-get($font-familys, 'HelveticaNeue') !default;
+$table-color: $dark !default;
+$table-cell-padding: 1rem !default;
+$table-th-y-cell-padding: 0.625rem $table-cell-padding !default;
+$table-th-bg: $white !default;
+$table-th-font-family: map-get($font-familys, 'HelveticaNeue-Bold') !default;
+
+// pagination
+$pagination-font-family: map-get($font-familys, 'HelveticaNeue') !default;
+$pagination-border-radius: $border-radius-base !default;
+$pagination-item-link-border: $border-width-base $border-style-base
+    $border-color-base !default;
+$pagination-item-link-padding: 0.5rem 1rem !default;
+$pagination-item-link: $dark !default;
+$pagination-item-link-bg: $white !default;
+$pagination-item-link-active: $white !default;
+$pagination-item-link-active-bg: $dark !default;
+$pagination-item-link-disabled: $gray-500 !default;

@@ -1,0 +1,37 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: $font-size-base * 0.75;
+
+    @include media-breakpoint-up(sm) {
+        font-size: $font-size-base * 0.875;
+    }
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-base;
+    }
+}
+
+body{
+    font-family: $font-family;
+    line-height: $line-height-base;
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+a{
+    color: $link-color;
+    text-decoration: $link-text-decoration;
+
+    &:hover, &:focus{
+        color: darken($link-color, $link-hover-color-darken);
+    }
+}
+
+button{
+    border: 0;
+    background-color: transparent;
+}
+

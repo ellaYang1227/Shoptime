@@ -1,0 +1,23 @@
+// 文字對齊
+// .text-{$breakpoint-key(可省略)}-{$text-align}
+// {$text-align}：表示文字對齊方向
+// {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+$text-aligns: 'left', 'center', 'right';
+
+.text- {
+    @each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+        @each $text-align in $text-aligns {
+            @include RWD-class-name(
+                $text-align,
+                $breakpoint-key,
+                $property-data: (text-align: $text-align),
+                $add-important: ture
+            );
+        }
+    }
+}
+
+// 文字裝飾
+.text-decoration-delete {
+    text-decoration: line-through;
+}

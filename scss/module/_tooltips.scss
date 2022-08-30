@@ -1,0 +1,51 @@
+.ui-tooltip,
+.ui-tooltip_arrow:after {
+    background: $tooltip-bg;
+    border-width: 0 !important;
+    box-shadow: none !important;
+}
+
+.ui-tooltip {
+    padding: $tooltip-padding !important;
+    color: $tooltip-color;
+    border-radius: $tooltip-border-radius;
+    font-family: $tooltip-font-family;
+    font-size: $tooltip-font-size;
+    text-align: center;
+}
+
+.ui-tooltip_arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+
+    &.top {
+        top: -16px;
+        bottom: auto;
+
+        &:after {
+            bottom: -20px;
+            top: auto;
+        }
+    }
+
+    &.left {
+        left: 20%;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: -20px;
+        width: 25px;
+        height: 25px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}

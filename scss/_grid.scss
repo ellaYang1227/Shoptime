@@ -1,0 +1,57 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: #{- $grid-gutter-width};
+    margin-left: #{- $grid-gutter-width};
+}
+
+// 網格
+// .col-{$breakpoint-key(可省略)}-{$columns(可省略)}
+// {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+// {$columns}：表示列數，值為 1 ~ 12 格(參照 _variables.scss 檔案內 $grid-columns 的設定)，省略表示均分 width
+.col {
+    @each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+        @for $columns from 0 through $grid-columns {
+            @if ($columns == 0) {
+                &#{if($breakpoint-key == "xs", "", "-")} {
+                    @include RWD-class-name(
+                        "",
+                        $breakpoint-key,
+                        $property-data: ("flex": 1 0 0%)
+                    );
+                }
+            } @else {
+                &- {
+                    @include RWD-class-name(
+                        $columns,
+                        $breakpoint-key,
+                        $property-data: (
+                        "max-width": calc(100% / $grid-columns * $columns),
+                        "flex": 0 0 calc(100% / $grid-columns * $columns)
+                        )
+                    );
+                }
+            }
+        }
+    }
+}
+
+// 網格 .col 系列合併(@extend)相同樣式程式碼
+%all-col {
+    position: relative;
+    width: 100%;
+    padding-right: $grid-gutter-width;
+    padding-left: $grid-gutter-width;
+}
+
+@each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+    @for $columns from 0 through $grid-columns {
+        .col {
+            &#{if($breakpoint-key == "xs", "", "-" + $breakpoint-key)} {
+                &#{if($columns == 0, "", "-" + $columns)} {
+                    @extend %all-col;
+                }
+            }
+        }
+    }
+}
