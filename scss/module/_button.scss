@@ -1,5 +1,5 @@
 // 按鈕
-.btn{
+.btn {
     border-radius: $button-border-radius;
     border: $border-width-base $border-style-base transparent;
     padding: $button-padding;
@@ -11,12 +11,13 @@
     // .btn-{$theme-key}
     // {$theme-key}：為 $theme 設定之色系，如 primary、success、warning、danger、white、dark...等
     @each $theme-key, $theme-value in $theme {
-        &-#{$theme-key}{
+        &-#{$theme-key} {
             color: $button-color;
             background-color: $theme-value;
             border-color: $theme-value;
 
-            &:hover, &:focus{
+            &:hover,
+            &:focus {
                 background-color: darken($theme-value, $button-hover-bg-darken);
                 border-color: darken($theme-value, $button-hover-bg-darken);
             }
@@ -24,20 +25,21 @@
     }
 
     // 純文字 按鈕樣式
-    &-link{
+    &.btn-link {
         color: $link-color;
 
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             color: darken($link-color, $link-hover-color-darken);
         }
     }
-    
+
     // 尺寸
-    &-lg{
+    &.btn-lg {
         font-size: $button-font-size-lg;
     }
 
-    &-block{
+    &.btn-block {
         width: 100%;
     }
 }

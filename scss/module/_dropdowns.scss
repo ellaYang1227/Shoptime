@@ -56,13 +56,13 @@
             }
 
             &:hover,
-            &-active {
+            &.dropdown_menu_item-active {
                 color: $dropdown-menu-item-active-color;
                 background-color: $dropdown-menu-item-active-bg;
             }
 
             &:hover:not(a),
-            &-active:not(a) {
+            &.dropdown_menu_item-active:not(a) {
                 background-color: transparent;
                 color: $dropdown-menu-item-color;
             }

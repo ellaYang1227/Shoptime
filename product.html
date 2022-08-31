@@ -38,7 +38,7 @@
             <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#addProductModal">ADD NEW
                 PRODUCT<i class="fa-solid fa-plus pl-2"></i></button>
             <!-- addProductModal -->
-            <div class="modal modal-show" id="addProductModal" tabindex="-1" role="dialog">
+            <div class="modal" id="addProductModal" tabindex="-1" role="dialog">
                 <div class="modal_content">
                     <div class="modal_content_header">
                         <h4 class="modal_content_header_title">ADD NEW PRODUCT</h4>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="modal_content_body">
                         <div class="row">
-                            <div class="col-md-auto">
+                            <div class="col-lg-auto">
                                 <label class="form_file_customize">
                                     <input type="file" class="d-none"
                                         accept="image/gif, image/jpeg, image/jpg, image/png">
@@ -62,16 +62,14 @@
                                 </div>
                                 <div class="img_group"><img src="images/add-product-03.jpg" alt="add-product-03"
                                         class="img_group_item"><img src="images/add-product-04.jpg" alt="add-product-04"
-                                        class="img_group_item"><img src="images/add-product-05.jpg" alt="add-product-05"
                                         class="img_group_item">
                                 </div>
-
                             </div>
-                            <div class="col-md">
+                            <div class="col-lg mt-4 mt-lg-0">
                                 <div class="form_group">
                                     <label for="product">Product Discription</label>
-                                    <input type="text" class="form-control mb-2" id="product" placeholder="Tiltle">
-                                    <textarea class="form-control" rows="6" placeholder="Discription"></textarea>
+                                    <input type="text" class="form_control mb-2" id="product" placeholder="Tiltle">
+                                    <textarea class="form_control" rows="6" placeholder="Discription"></textarea>
                                 </div>
                                 <div class="form_group">
                                     <label>Price</label>
@@ -81,7 +79,7 @@
                                                 <div class="input_group_prepend">
                                                     <span class="input-group-text">Original</span>
                                                 </div>
-                                                <input type="text" class="form-control text-right" value="$3,200">
+                                                <input type="text" class="form_control text-right" value="$3,200">
                                             </div>
                                         </div>
                                         <div class="col-5">
@@ -89,20 +87,20 @@
                                                 <div class="input_group_prepend">
                                                     <span class="input-group-text">Discount</span>
                                                 </div>
-                                                <input type="text" class="form-control text-right" value="$2,800">
+                                                <input type="text" class="form_control text-right" value="$2,800">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form_group pb-6">
                                     <label>Specification</label>
-                                    <div class="form_row">
+                                    <div class="form_row mb-2">
                                         <div class="col-auto">
                                             <div class="input_group">
                                                 <div class="input_group_prepend">
                                                     <span class="input-group-text">Size</span>
                                                 </div>
-                                                <select class="form-control">
+                                                <select class="form_control">
                                                     <option>L</option>
                                                     <option>M</option>
                                                     <option>S</option>
@@ -114,7 +112,7 @@
                                                 <div class="input_group_prepend">
                                                     <span class="input-group-text">Color</span>
                                                 </div>
-                                                <input type="text" class="form-control text-center" value="Gray">
+                                                <input type="text" class="form_control text-center" value="Gray">
                                             </div>
                                         </div>
                                         <div class="col">
@@ -122,11 +120,12 @@
                                                 <div class="input_group_prepend">
                                                     <span class="input-group-text">Inventory</span>
                                                 </div>
-                                                <input type="number" class="form-control text-center" value="15">
+                                                <input type="number" class="form_control text-center" value="15">
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-dark btn-lg btn-block mt-2">ADD NEW
+                                    <button type="button" class="btn btn-dark btn-lg btn-block"
+                                        id="js-addSpecification">ADD NEW
                                         SPECIFICATION<i class="fa-solid fa-plus pl-2"></i></button>
                                 </div>
                             </div>
@@ -134,7 +133,7 @@
                         <div class="text-right">
                             <button type="button" class="btn btn-link btn-lg text-darkGrey100" data-dismiss="modal">SAVE
                                 DRAFT</button>
-                            <button type="button" class="btn btn-dark btn-lg">PUBLISH</button>
+                            <button type="button" class="btn btn-dark btn-lg" data-dismiss="modal">PUBLISH</button>
                         </div>
                     </div>
                 </div>
@@ -185,8 +184,9 @@
                             <button class="btn btn-success dropdown_toggle_btn" type="button"
                                 data-toggle="dropdown">PUBLISHED</button>
                             <div class="dropdown_menu">
-                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Published</a>
-                                <a class="dropdown_menu_item" href="#">Unpublished</a>
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#"
+                                    data-updateBtnText="true">Published</a>
+                                <a class="dropdown_menu_item" href="#" data-updateBtnText="true">Unpublished</a>
                             </div>
                         </div>
                     </td>
@@ -209,8 +209,8 @@
                                 <input type="checkbox" value="" id="tableCheck2">
                                 <span></span>
                             </label>
-                            <img src="images/product default.jpg" alt="Mauris non tem." class="mx-2 table_td_img">
-                            <h2 class="font-size-14 font-family-HelveticaNeue">Mauris non tem.</h2>
+                            <img src="images/product default.jpg" alt="Curabitur lobo." class="mx-2 table_td_img">
+                            <h2 class="font-size-14 font-family-HelveticaNeue">Curabitur lobo.</h2>
                         </div>
                     </td>
                     <td rowspan="3" align="right">
@@ -233,8 +233,9 @@
                             <button class="btn btn-success dropdown_toggle_btn" type="button"
                                 data-toggle="dropdown">PUBLISHED</button>
                             <div class="dropdown_menu">
-                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Published</a>
-                                <a class="dropdown_menu_item" href="#">Unpublished</a>
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#"
+                                    data-updateBtnText="true">Published</a>
+                                <a class="dropdown_menu_item" href="#" data-updateBtnText="true">Unpublished</a>
                             </div>
                         </div>
                     </td>
@@ -257,8 +258,8 @@
                                 <input type="checkbox" value="" id="tableCheck3">
                                 <span></span>
                             </label>
-                            <img src="images/product default.jpg" alt="Mauris non tem." class="mx-2 table_td_img">
-                            <h2 class="font-size-14 font-family-HelveticaNeue text-darkGrey">Mauris non tem.</h2>
+                            <img src="images/product default.jpg" alt="Curabitur lobo." class="mx-2 table_td_img">
+                            <h2 class="font-size-14 font-family-HelveticaNeue text-darkGrey">Curabitur lobo.</h2>
                         </div>
                     </td>
                     <td rowspan=" 3" align="right">
@@ -305,6 +306,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="js/load-html.js"></script>
+    <script src="js/page/product.js"></script>
 </body>
 
 </html>

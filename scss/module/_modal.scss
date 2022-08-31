@@ -1,4 +1,4 @@
-.modal{
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -6,22 +6,41 @@
     display: none;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden auto;
     background-color: $modal-bg;
-    padding-top: 91px;
+    padding: 91px 0;
 
-    &.modal-show{
+    &.modal-show {
         display: block;
     }
 
-    .modal_content{
-        width: 940px;
+    .modal_content {
+        @each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+            @each $container-key, $container-value in $container-max-widths {
+                @if ($breakpoint-key == $container-key) {
+                    @include change-RWD-property-value(
+                        $breakpoint-key,
+                        $property-data: (
+                            'width':
+                                if(
+                                    $breakpoint-key == 'xs',
+                                    '90%',
+                                    $container-value
+                                )
+                        )
+                    );
+                }
+            }
+        }
+    }
+
+    .modal_content {
         background-color: $modal-content-bg;
         border-radius: $modal-content-border-radius;
         margin: 0 auto;
         position: relative;
 
-        .modal_content_header{
+        .modal_content_header {
             padding: $modal-content-header-padding;
             background-color: $modal-content-header-bg;
             position: relative;

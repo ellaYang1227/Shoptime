@@ -4,7 +4,7 @@
         // .flex-{$breakpoint-key}-{$flex-direction}
         // {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
         // {$flex-direction}：flex 的方向，值同 $flex-directions 項目
-        $flex-directions: "row", "column";
+        $flex-directions: 'row', 'column';
         @each $flex-direction in $flex-directions {
             @include RWD-class-name(
                 $flex-direction,
@@ -15,7 +15,7 @@
         }
 
         // 填滿
-        $flex-fills: "fill";
+        $flex-fills: 'fill';
         @each $flex-fill in $flex-fills {
             @include RWD-class-name(
                 $flex-fill,
@@ -26,16 +26,30 @@
         }
 
         // 伸縮值 grow or shrink
-        $flex-telescopics: "grow", "shrink";
+        $flex-telescopics: 'grow', 'shrink';
         @each $flex-telescopic in $flex-telescopics {
             @for $num from 0 through 1 {
                 @include RWD-class-name(
-                $flex-telescopic,
-                $breakpoint-key,
-                $property-data: (flex-#{$flex-telescopic}: $num),
-                $add-important: ture
+                    $flex-telescopic,
+                    $breakpoint-key,
+                    $property-data: (flex-#{$flex-telescopic}: $num),
+                    $add-important: ture
                 );
             }
+        }
+
+        // wrap
+        // .flex-{$breakpoint-key}-{$flex-wrap}
+        // {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+        // {$flex-wrap}：flex 的 wrap，值同 $flex-wraps 項目
+        $flex-wraps: 'nowrap', 'wrap', 'reverse ';
+        @each $flex-wrap in $flex-wraps {
+            @include RWD-class-name(
+                $flex-wrap,
+                $breakpoint-key,
+                $property-data: (flex-wrap: $flex-wrap),
+                $add-important: ture
+            );
         }
     }
 
@@ -44,15 +58,16 @@
     // {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
     // {$justify-content-key}：flex 內容(justify-content)，值同 $justify-contents 項目
     $justify-contents: (
-        start: "flex-start",
-        center: "center",
-        end: "flex-end",
-        between: "space-between",
-        around: "space-around"
+        start: 'flex-start',
+        center: 'center',
+        end: 'flex-end',
+        between: 'space-between',
+        around: 'space-around'
     );
 
     .justify-content- {
-        @each $justify-content-key, $justify-content-value in $justify-contents {
+        @each $justify-content-key, $justify-content-value in $justify-contents
+        {
             @include RWD-class-name(
                 $justify-content-key,
                 $breakpoint-key,
@@ -67,11 +82,11 @@
     // {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
     // {$align-items-key}：flex 對齊物件(align-items)，值同 $align-items 項目
     $align-items: (
-        start: "flex-start",
-        center: "center",
-        end: "flex-end",
-        baseline: "baseline",
-        stretch: "stretch"
+        start: 'flex-start',
+        center: 'center',
+        end: 'flex-end',
+        baseline: 'baseline',
+        stretch: 'stretch'
     );
 
     .align-items- {

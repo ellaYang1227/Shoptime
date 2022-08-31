@@ -21,3 +21,14 @@ $('[data-toggle="dropdown"]').click(function (e) {
 $('.form_check').click(function (e) {
     e.stopPropagation();
 });
+
+// 重設下拉選項
+$('[data-updateBtnText="true"]').click(function (e) {
+    e.preventDefault();
+    $(this).addClass('dropdown_menu_item-active');
+    const updateText = $(this).text();
+    $(this)
+        .siblings('.dropdown_menu_item-active')
+        .removeClass('dropdown_menu_item-active');
+    $(this).parent().prev('[data-toggle="dropdown"]').text(updateText);
+});

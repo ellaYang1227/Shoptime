@@ -1,25 +1,25 @@
-.form_row{
+.form_row {
     display: flex;
     align-items: center;
-    margin-right: - $form-row-padding-y;
-    margin-left: - $form-row-padding-y;
+    margin-right: -$form-row-padding-y;
+    margin-left: -$form-row-padding-y;
 
-    > [class*="col"]{
+    > [class*='col'] {
         padding-left: $form-row-padding-y;
         padding-right: $form-row-padding-y;
     }
 }
 
-.form_group{
-    padding-bottom: 1.25rem; 
+.form_group {
+    padding-bottom: 1.25rem;
+
+    label {
+        color: $forms-label-color;
+        font-family: $forms-label-font-family;
+    }
 }
 
-label {
-    color: $forms-label-color;
-    font-family: $forms-label-font-family;
-}
-
-.form-control {
+.form_control {
     width: 100%;
     border-radius: $input-border-radius;
     border: $input-border;
@@ -29,7 +29,7 @@ label {
     padding: $input-padding;
 }
 
-textarea.form-control {
+textarea.form_control {
     height: auto;
 }
 
@@ -93,9 +93,9 @@ label.form_check {
 }
 
 // file upload
-label.form_file_customize{
+label.form_file_customize {
     cursor: pointer;
-    width: 394px;
+    width: 100%;
     height: 115px;
     font-size: $pagination-font-size;
     font-family: $pagination-font-family;

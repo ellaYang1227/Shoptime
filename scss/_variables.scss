@@ -48,12 +48,9 @@ $grid-breakpoints: (
 $container-max-widths: (
     xs: 100%,
     sm: 540px,
-    //36
     md: 720px,
-    //48
     lg: 908px,
-    //84
-    xl: 940px //84
+    xl: 940px
 ) !default;
 
 // Spacing
@@ -183,7 +180,7 @@ $forms-label-font-family: map-get($font-familys, 'HelveticaNeue-Bold') !default;
 $input-font-size: 1rem !default;
 $input-border-radius: $border-radius-base !default;
 $input-border: $border-width-base $border-style-base $forms-color-base !default;
-$input-padding-y: 1rem  !default;
+$input-padding-y: 1rem !default;
 $input-padding: 0.5rem $input-padding-y !default;
 
 // checkbox
@@ -196,12 +193,12 @@ $checkbox-border-radius: 3px !default;
 // file upload
 $pagination-font-size: 1rem !default;
 $pagination-font-family: map-get($font-familys, 'HelveticaNeue-Bold') !default;
-$file-customize-color: $gray-500  !default;
+$file-customize-color: $gray-500 !default;
 $file-customize-bg: $gray-200 !default;
-$file-customize-padding: 1.5rem  !default;
+$file-customize-padding: 1.5rem !default;
 
 // input group
-$input-group-color: #55595C !default;
+$input-group-color: #55595c !default;
 $input-group-padding: $input-padding !default;
 $input-group-prepend-bg: $gray-200 !default;
 

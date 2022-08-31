@@ -64,7 +64,7 @@
                 right: 0.625rem;
 
                 &:hover {
-                color: $navber-color;
+                    color: $navber-color;
                 }
             }
         }
@@ -84,7 +84,7 @@
             }
 
             &:hover,
-            &-active {
+            &.navber_nav_link-active {
                 border-bottom: 4px solid $navber-nav-link-active-color;
                 color: $navber-nav-link-active-color;
             }

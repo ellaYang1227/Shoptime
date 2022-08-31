@@ -1,8 +1,10 @@
-*, *::before, *::after{
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: $font-size-base * 0.75;
 
     @include media-breakpoint-up(sm) {
@@ -14,24 +16,28 @@ html{
     }
 }
 
-body{
+body {
     font-family: $font-family;
     line-height: $line-height-base;
     color: $body-color;
     background-color: $body-bg;
 }
 
-a{
+a {
     color: $link-color;
     text-decoration: $link-text-decoration;
 
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         color: darken($link-color, $link-hover-color-darken);
     }
 }
 
-button{
+button {
     border: 0;
     background-color: transparent;
 }
 
+textarea {
+    resize: none;
+}
