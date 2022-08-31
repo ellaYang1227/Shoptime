@@ -3,7 +3,7 @@
 // {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
 // {$display}：設定 display 屬性值，值同 $displays 項目
 
-$displays : "none", "inline", "block", "flex";
+$displays : "none", "inline", "block", "flex", "inherit";
 
 .d-{
     @each $breakpoint-key, $breakpoint-value in $grid-breakpoints { 

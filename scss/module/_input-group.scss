@@ -1,0 +1,20 @@
+.input_group{
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+
+    .input_group_prepend{
+        border: $input-border;
+        border-top-left-radius: $input-border-radius;
+        border-bottom-left-radius: $input-border-radius;
+        color: $input-group-color;
+        padding: $input-group-padding;
+        background-color: $input-group-prepend-bg;
+
+        ~ .form-control{
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-left: -1px;
+        }
+    }
+}

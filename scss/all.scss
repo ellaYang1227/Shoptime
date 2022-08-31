@@ -11,9 +11,11 @@
 
 @import './module/button';
 @import './module/card';
-@import './module/forms';
 @import './module/dropdowns';
+@import './module/forms';
+@import './module/input-group';
 @import './module/list-group';
+@import './module/modal';
 @import './module/navbar';
 @import './module/pagination';
 @import './module/tables';
@@ -27,3 +29,27 @@
 @import './utilities/sizing';
 @import './utilities/spacing';
 @import './utilities/text';
+@import './utilities/vertical-alignment';
+
+
+/*
+* ==========================================================================
+* page
+* ==========================================================================
+*/
+
+.echarts_height {
+    height: 310px;
+}
+
+.img_group{
+    display: flex;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+
+    .img_group_item {
+        flex: 1 1 auto;
+        padding: 0.5rem 0.25rem 0 0.25rem;
+    }
+}
+

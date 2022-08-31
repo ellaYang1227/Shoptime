@@ -35,19 +35,120 @@
                 <a href="#" class="text-dark px-3" data-toggle="tooltip" title="Change Status"><i
                         class="fa-solid fa-tags"></i></a>
             </div>
-            <div class="dropdown">
-                <button class="btn btn-dark" type="button">ADD NEW PRODUCT<i class="fa-solid fa-plus pl-2"></i></button>
+            <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#addProductModal">ADD NEW
+                PRODUCT<i class="fa-solid fa-plus pl-2"></i></button>
+            <!-- addProductModal -->
+            <div class="modal modal-show" id="addProductModal" tabindex="-1" role="dialog">
+                <div class="modal_content">
+                    <div class="modal_content_header">
+                        <h4 class="modal_content_header_title">ADD NEW PRODUCT</h4>
+                        <button type="button" class="modal_content_header_close" data-dismiss="modal"
+                            aria-label="Close"><i class="fa-solid fa-xmark fa-2x"></i></button>
+                    </div>
+                    <div class="modal_content_body">
+                        <div class="row">
+                            <div class="col-md-auto">
+                                <label class="form_file_customize">
+                                    <input type="file" class="d-none"
+                                        accept="image/gif, image/jpeg, image/jpg, image/png">
+                                    <i class="fa-solid fa-cloud-arrow-up fa-2x"></i>
+                                    <p>Drag an image or click here to upload…</p>
+                                </label>
+                                <div class="img_group">
+                                    <img src="images/add-product-01.jpg" alt="add-product-01"
+                                        class="img_group_item"><img src="images/add-product-02.jpg" alt="add-product-02"
+                                        class="img_group_item"><img src="images/add-product-03.jpg" alt="add-product-03"
+                                        class="img_group_item">
+                                </div>
+                                <div class="img_group"><img src="images/add-product-03.jpg" alt="add-product-03"
+                                        class="img_group_item"><img src="images/add-product-04.jpg" alt="add-product-04"
+                                        class="img_group_item"><img src="images/add-product-05.jpg" alt="add-product-05"
+                                        class="img_group_item">
+                                </div>
+
+                            </div>
+                            <div class="col-md">
+                                <div class="form_group">
+                                    <label for="product">Product Discription</label>
+                                    <input type="text" class="form-control mb-2" id="product" placeholder="Tiltle">
+                                    <textarea class="form-control" rows="6" placeholder="Discription"></textarea>
+                                </div>
+                                <div class="form_group">
+                                    <label>Price</label>
+                                    <div class="form_row">
+                                        <div class="col-5">
+                                            <div class="input_group">
+                                                <div class="input_group_prepend">
+                                                    <span class="input-group-text">Original</span>
+                                                </div>
+                                                <input type="text" class="form-control text-right" value="$3,200">
+                                            </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="input_group">
+                                                <div class="input_group_prepend">
+                                                    <span class="input-group-text">Discount</span>
+                                                </div>
+                                                <input type="text" class="form-control text-right" value="$2,800">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_group pb-6">
+                                    <label>Specification</label>
+                                    <div class="form_row">
+                                        <div class="col-auto">
+                                            <div class="input_group">
+                                                <div class="input_group_prepend">
+                                                    <span class="input-group-text">Size</span>
+                                                </div>
+                                                <select class="form-control">
+                                                    <option>L</option>
+                                                    <option>M</option>
+                                                    <option>S</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="input_group">
+                                                <div class="input_group_prepend">
+                                                    <span class="input-group-text">Color</span>
+                                                </div>
+                                                <input type="text" class="form-control text-center" value="Gray">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="input_group">
+                                                <div class="input_group_prepend">
+                                                    <span class="input-group-text">Inventory</span>
+                                                </div>
+                                                <input type="number" class="form-control text-center" value="15">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-dark btn-lg btn-block mt-2">ADD NEW
+                                        SPECIFICATION<i class="fa-solid fa-plus pl-2"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-link btn-lg text-darkGrey100" data-dismiss="modal">SAVE
+                                DRAFT</button>
+                            <button type="button" class="btn btn-dark btn-lg">PUBLISH</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col"><span class="pl-5">Product</span></th>
-                    <th scope="col">Original</th>
-                    <th scope="col">Discount</th>
-                    <th scope="col">Size</th>
-                    <th scope="col">Color</th>
-                    <th scope="col">Inventory</th>
+                    <th scope="col" align="right">Original</th>
+                    <th scope="col" align="right">Discount</th>
+                    <th scope="col" align="left">Size</th>
+                    <th scope="col" align="left">Color</th>
+                    <th scope="col" align="right">Inventory</th>
                     <th scope="col" align="left">Status</th>
                 </tr>
             </thead>
@@ -55,53 +156,149 @@
                 <!-- 1 -->
                 <tr>
                     <td rowspan="3">
-                        <label class="form_check form_check-bgWhite">
-                            <input type="checkbox" value="" id="tableCheck1">
-                            <span></span><label for="tableCheck1">Ian Medina</label>
-                        </label>
+                        <div class="d-flex align-items-center">
+                            <label class="form_check form_check-bgWhite">
+                                <input type="checkbox" value="" id="tableCheck1">
+                                <span></span>
+                            </label>
+                            <img src="images/product default.jpg" alt="Mauris non tem." class="mx-2 table_td_img">
+                            <h2 class="font-size-14 font-family-HelveticaNeue">Mauris non tem.</h2>
+                        </div>
                     </td>
-                    <td rowspan="3">$3,200</td>
-                    <td rowspan="3">$2,800</td>
-                    <td class="border-bottom-1 border-white pb-2">L</td>
-                    <td class="border-bottom-1 border-white pb-2">Gray<br />Black</td>
-                    <td class="border-bottom-1 border-white pb-2">15<br />20</td>
-                    <td rowspan="3" valign="bottom">
-                        123
-                        <!-- <div class="dropdown">
+                    <td rowspan="3" align="right">
+                        <div class="table_td_img d-inherit align-middle">$3,200</div>
+                    </td>
+                    <td rowspan="3" align="right">
+                        <div class="table_td_img d-inherit align-middle">$2,800</div>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <div class="table_td_img d-inherit align-middle">L</div>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <div class="table_td_img d-inherit align-middle pt-3">Gray<br />Black</div>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2" align="right">
+                        <div class="table_td_img d-inherit align-middle pt-3">15<br />20</div>
+                    </td>
+                    <td rowspan="3" class="align-bottom">
+                        <div class="dropdown">
                             <button class="btn btn-success dropdown_toggle_btn" type="button"
                                 data-toggle="dropdown">PUBLISHED</button>
                             <div class="dropdown_menu">
                                 <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Published</a>
                                 <a class="dropdown_menu_item" href="#">Unpublished</a>
                             </div>
-                        </div> -->
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td class="border-bottom-1 border-white py-2">M</td>
                     <td class="border-bottom-1 border-white py-2">Gray<br />Black</td>
-                    <td class="border-bottom-1 border-white py-2">15<br />20</td>
+                    <td class="border-bottom-1 border-white py-2" align="right">15<br />20</td>
                 </tr>
                 <tr>
                     <td class="pt-2">S</td>
                     <td class="pt-2">Gray<br />Black</td>
-                    <td class="pt-2">15<br />20</td>
+                    <td class="pt-2" align="right">15<br />20</td>
+                </tr>
+                <!-- 2 -->
+                <tr>
+                    <td rowspan="3">
+                        <div class="d-flex align-items-center">
+                            <label class="form_check form_check-bgWhite">
+                                <input type="checkbox" value="" id="tableCheck2">
+                                <span></span>
+                            </label>
+                            <img src="images/product default.jpg" alt="Mauris non tem." class="mx-2 table_td_img">
+                            <h2 class="font-size-14 font-family-HelveticaNeue">Mauris non tem.</h2>
+                        </div>
+                    </td>
+                    <td rowspan="3" align="right">
+                        <div class="table_td_img d-inherit align-middle">$3,200</div>
+                    </td>
+                    <td rowspan="3" align="right">
+                        <div class="table_td_img d-inherit align-middle">$2,800</div>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <div class="table_td_img d-inherit align-middle">L</div>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <div class="table_td_img d-inherit align-middle pt-3">Gray<br />Black</div>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2" align="right">
+                        <div class="table_td_img d-inherit align-middle pt-3">15<br />20</div>
+                    </td>
+                    <td rowspan="3" class="align-bottom">
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown_toggle_btn" type="button"
+                                data-toggle="dropdown">PUBLISHED</button>
+                            <div class="dropdown_menu">
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Published</a>
+                                <a class="dropdown_menu_item" href="#">Unpublished</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-bottom-1 border-white py-2">M</td>
+                    <td class="border-bottom-1 border-white py-2">Gray<br />Black</td>
+                    <td class="border-bottom-1 border-white py-2" align="right">15<br />20</td>
+                </tr>
+                <tr>
+                    <td class="pt-2">S</td>
+                    <td class="pt-2">Gray<br />Black</td>
+                    <td class="pt-2" align="right">15<br />20</td>
+                </tr>
+                <!-- 3 -->
+                <tr class="text-darkGrey">
+                    <td rowspan="3">
+                        <div class="d-flex align-items-center">
+                            <label class="form_check form_check-bgWhite">
+                                <input type="checkbox" value="" id="tableCheck3">
+                                <span></span>
+                            </label>
+                            <img src="images/product default.jpg" alt="Mauris non tem." class="mx-2 table_td_img">
+                            <h2 class="font-size-14 font-family-HelveticaNeue text-darkGrey">Mauris non tem.</h2>
+                        </div>
+                    </td>
+                    <td rowspan=" 3" align="right">
+                        <div class="table_td_img d-inherit align-middle">$3,200</div>
+                    </td>
+                    <td rowspan="3" align="right">
+                        <div class="table_td_img d-inherit align-middle">$2,800</div>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <div class="table_td_img d-inherit align-middle">L</div>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2">
+                        <div class="table_td_img d-inherit align-middle pt-3">Gray<br />Black</div>
+                    </td>
+                    <td class="border-bottom-1 border-white pb-2" align="right">
+                        <div class="table_td_img d-inherit align-middle pt-3">15<br />20</div>
+                    </td>
+                    <td rowspan="3" class="align-bottom">
+                        <div class="dropdown">
+                            <button class="btn btn-darkGrey dropdown_toggle_btn" type="button"
+                                data-toggle="dropdown">UNPUBLISHED</button>
+                            <div class="dropdown_menu">
+                                <a class="dropdown_menu_item" href="#">Published</a>
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Unpublished</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="text-darkGrey">
+                    <td class="border-bottom-1 border-white py-2">M</td>
+                    <td class="border-bottom-1 border-white py-2">Gray<br />Black</td>
+                    <td class="border-bottom-1 border-white py-2" align="right">15<br />20</td>
+                </tr>
+                <tr class="text-darkGrey">
+                    <td class="pt-2">S</td>
+                    <td class="pt-2">Gray<br />Black</td>
+                    <td class="pt-2" align="right">15<br />20</td>
                 </tr>
             </tbody>
         </table>
-        <nav class="pagination py-6">
-            <a class="pagination_item_link pagination_item_link-disabled" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-            <a class="pagination_item_link pagination_item_link-active" href="#">1</a>
-            <a class="pagination_item_link" href="#">2</a>
-            <a class="pagination_item_link" href="#">3</a>
-            <a class="pagination_item_link" href="#">4</a>
-            <a class="pagination_item_link" href="#">5</a>
-            <a class="pagination_item_link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </nav>
     </div>
     <script src="https://kit.fontawesome.com/e977eaa2d8.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>

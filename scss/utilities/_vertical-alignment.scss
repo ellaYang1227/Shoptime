@@ -1,0 +1,13 @@
+// 垂直對齊
+// align-${$verticAlalign}
+// {$verticAlalign}：設定 vertical-align 屬性值，值同 $verticAlaligns 項目
+
+$verticAlaligns : "baseline", "top", "middle", "bottom", "text-top", "text-bottom";
+
+.align-{
+    @each $verticAlalign in $verticAlaligns {
+        &#{$verticAlalign} {
+            @include rule($property-data: ('vertical-align': $verticAlalign ));
+        }
+    }
+}

@@ -17,7 +17,11 @@
                     @include RWD-class-name(
                         "",
                         $breakpoint-key,
-                        $property-data: ("flex": 1 0 0%)
+                        $property-data: (
+                            "flex-basis": 0,
+                            "flex-grow": 1,
+                            "max-width": 100%,
+                        )
                     );
                 }
             } @else {
@@ -51,6 +55,32 @@
                 &#{if($columns == 0, "", "-" + $columns)} {
                     @extend %all-col;
                 }
+            }
+        }
+    }
+}
+
+// auto
+// col-{$breakpoint-key(可省略)}-auto
+// {$breakpoint-key}：表示斷點尺寸名稱，值為 xs(省略)、sm、md、lg、xl(參照 _variables.scss 檔案內 $grid-breakpoints 的設定)
+.col {
+    @each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+        &- {
+            @include RWD-class-name("auto",
+                    $breakpoint-key,
+                    $property-data: (
+                        "flex": 0 0 auto,
+                        "width": auto
+                    ));
+        }
+    }
+}
+
+@each $breakpoint-key, $breakpoint-value in $grid-breakpoints {
+    .col {
+        &#{if($breakpoint-key == "xs", "", "-" + $breakpoint-key)} {
+            &-auto {
+                @extend %all-col;
             }
         }
     }
