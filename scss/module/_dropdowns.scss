@@ -55,6 +55,10 @@
                 border-bottom-right-radius: $dropdown-menu-border-radius;
             }
 
+            &.dropdown_menu_item-active {
+                cursor: default;
+            }
+
             &:hover,
             &.dropdown_menu_item-active {
                 color: $dropdown-menu-item-active-color;

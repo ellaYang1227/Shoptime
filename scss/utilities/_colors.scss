@@ -9,35 +9,23 @@
                     'color': $theme-value
                 )
             );
+
+            &:hover,
+            &:focus {
+                @include rule($property-data: ('color': darken($theme-value, $link-hover-color-darken)));
+            }
         }
     }
 }
 
-// 連結文字
-a {
-    // 樣式
-    // .text-{$theme-key}
-    // {$theme-key}：為 $theme 設定之色系，如 primary、success、warning、danger、white、dark...等
-    &.text- {
-        @each $theme-key, $theme-value in $theme {
-            &#{$theme-key} {
-                &:hover,
-                &:focus {
-                    @include rule(
-                        $property-data: (
-                            'color':
-                                darken($theme-value, $link-hover-color-darken)
-                        )
-                    );
-                }
-            }
-        }
-    }
+// reset
+.text-reset {
+    color : inherit;
+}
 
-    // 停用
-    &.disabled {
-        pointer-events: none;
-    }
+// 連結文字 停用
+a.disabled{
+    pointer-events: none;
 }
 
 // 背景顏色

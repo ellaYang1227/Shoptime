@@ -21,3 +21,16 @@ $text-aligns: 'left', 'center', 'right';
 .text-decoration-delete {
     text-decoration: line-through;
 }
+
+// 文字變換(文字內容轉大寫)
+// .text-{$text-transform}
+// {$text-transform}：表示文字對齊方向
+$text-transforms: 'lowercase', 'uppercase', 'capitalize';
+
+.text- {
+    @each $text-transform in $text-transforms {
+        &#{$text-transform} {
+            @include rule($property-data: ('text-transform': $text-transform ));
+        }
+    }
+}

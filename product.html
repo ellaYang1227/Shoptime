@@ -74,7 +74,7 @@
                                 <div class="form_group">
                                     <label>Price</label>
                                     <div class="form_row">
-                                        <div class="col-5">
+                                        <div class="col col-sm-5">
                                             <div class="input_group">
                                                 <div class="input_group_prepend">
                                                     <span class="input-group-text">Original</span>
@@ -82,7 +82,7 @@
                                                 <input type="text" class="form_control text-right" value="$3,200">
                                             </div>
                                         </div>
-                                        <div class="col-5">
+                                        <div class="col col-sm-5">
                                             <div class="input_group">
                                                 <div class="input_group_prepend">
                                                     <span class="input-group-text">Discount</span>
@@ -107,7 +107,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-5 col-sm">
                                             <div class="input_group">
                                                 <div class="input_group_prepend">
                                                     <span class="input-group-text">Color</span>
@@ -115,7 +115,7 @@
                                                 <input type="text" class="form_control text-center" value="Gray">
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-6 col-sm pt-2 pt-sm-0">
                                             <div class="input_group">
                                                 <div class="input_group_prepend">
                                                     <span class="input-group-text">Inventory</span>
@@ -153,7 +153,7 @@
             </thead>
             <tbody>
                 <!-- 1 -->
-                <tr>
+                <tr data-group="1">
                     <td rowspan="3">
                         <div class="d-flex align-items-center">
                             <label class="form_check form_check-bgWhite">
@@ -161,7 +161,7 @@
                                 <span></span>
                             </label>
                             <img src="images/product default.jpg" alt="Mauris non tem." class="mx-2 table_td_img">
-                            <h2 class="font-size-14 font-family-HelveticaNeue">Mauris non tem.</h2>
+                            <h2 class="font-size-14 font-family-HelveticaNeue text-reset">Mauris non tem.</h2>
                         </div>
                     </td>
                     <td rowspan="3" align="right">
@@ -181,7 +181,7 @@
                     </td>
                     <td rowspan="3" class="align-bottom">
                         <div class="dropdown">
-                            <button class="btn btn-success dropdown_toggle_btn" type="button"
+                            <button class="btn btn-success dropdown_toggle_btn text-uppercase" type="button"
                                 data-toggle="dropdown">PUBLISHED</button>
                             <div class="dropdown_menu">
                                 <a class="dropdown_menu_item dropdown_menu_item-active" href="#"
@@ -191,18 +191,18 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <tr data-group="1">
                     <td class="border-bottom-1 border-white py-2">M</td>
                     <td class="border-bottom-1 border-white py-2">Gray<br />Black</td>
                     <td class="border-bottom-1 border-white py-2" align="right">15<br />20</td>
                 </tr>
-                <tr>
+                <tr data-group="1">
                     <td class="pt-2">S</td>
                     <td class="pt-2">Gray<br />Black</td>
                     <td class="pt-2" align="right">15<br />20</td>
                 </tr>
                 <!-- 2 -->
-                <tr>
+                <tr data-group="2">
                     <td rowspan="3">
                         <div class="d-flex align-items-center">
                             <label class="form_check form_check-bgWhite">
@@ -210,7 +210,7 @@
                                 <span></span>
                             </label>
                             <img src="images/product default.jpg" alt="Curabitur lobo." class="mx-2 table_td_img">
-                            <h2 class="font-size-14 font-family-HelveticaNeue">Curabitur lobo.</h2>
+                            <h2 class="font-size-14 font-family-HelveticaNeue text-reset">Curabitur lobo.</h2>
                         </div>
                     </td>
                     <td rowspan="3" align="right">
@@ -230,7 +230,7 @@
                     </td>
                     <td rowspan="3" class="align-bottom">
                         <div class="dropdown">
-                            <button class="btn btn-success dropdown_toggle_btn" type="button"
+                            <button class="btn btn-success dropdown_toggle_btn text-uppercase" type="button"
                                 data-toggle="dropdown">PUBLISHED</button>
                             <div class="dropdown_menu">
                                 <a class="dropdown_menu_item dropdown_menu_item-active" href="#"
@@ -240,18 +240,18 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <tr data-group="2">
                     <td class="border-bottom-1 border-white py-2">M</td>
                     <td class="border-bottom-1 border-white py-2">Gray<br />Black</td>
                     <td class="border-bottom-1 border-white py-2" align="right">15<br />20</td>
                 </tr>
-                <tr>
+                <tr data-group="2">
                     <td class="pt-2">S</td>
                     <td class="pt-2">Gray<br />Black</td>
                     <td class="pt-2" align="right">15<br />20</td>
                 </tr>
                 <!-- 3 -->
-                <tr class="text-darkGrey">
+                <tr data-group="3" class="text-darkGrey">
                     <td rowspan="3">
                         <div class="d-flex align-items-center">
                             <label class="form_check form_check-bgWhite">
@@ -259,7 +259,7 @@
                                 <span></span>
                             </label>
                             <img src="images/product default.jpg" alt="Curabitur lobo." class="mx-2 table_td_img">
-                            <h2 class="font-size-14 font-family-HelveticaNeue text-darkGrey">Curabitur lobo.</h2>
+                            <h2 class="font-size-14 font-family-HelveticaNeue text-reset">Curabitur lobo.</h2>
                         </div>
                     </td>
                     <td rowspan=" 3" align="right">
@@ -279,21 +279,22 @@
                     </td>
                     <td rowspan="3" class="align-bottom">
                         <div class="dropdown">
-                            <button class="btn btn-darkGrey dropdown_toggle_btn" type="button"
+                            <button class="btn btn-darkGrey dropdown_toggle_btn text-uppercase" type="button"
                                 data-toggle="dropdown">UNPUBLISHED</button>
                             <div class="dropdown_menu">
-                                <a class="dropdown_menu_item" href="#">Published</a>
-                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#">Unpublished</a>
+                                <a class="dropdown_menu_item" href="#" data-updateBtnText="true">Published</a>
+                                <a class="dropdown_menu_item dropdown_menu_item-active" href="#"
+                                    data-updateBtnText="true">Unpublished</a>
                             </div>
                         </div>
                     </td>
                 </tr>
-                <tr class="text-darkGrey">
+                <tr data-group="3" class="text-darkGrey">
                     <td class="border-bottom-1 border-white py-2">M</td>
                     <td class="border-bottom-1 border-white py-2">Gray<br />Black</td>
                     <td class="border-bottom-1 border-white py-2" align="right">15<br />20</td>
                 </tr>
-                <tr class="text-darkGrey">
+                <tr data-group="3" class="text-darkGrey">
                     <td class="pt-2">S</td>
                     <td class="pt-2">Gray<br />Black</td>
                     <td class="pt-2" align="right">15<br />20</td>
