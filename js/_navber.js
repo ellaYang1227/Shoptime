@@ -4,9 +4,9 @@ $(document).ready(function(){
     const navLinks = $("a.navber_nav_link");
     for(let i = 0; i < navLinks.length; i++){
         const pathname = navLinks[i].href.replace(location.origin, '');
-        if(location.pathname === '/' && i === 0){
+        if((location.pathname === '/' || location.pathname.indexOf('index.html') > -1) && i === 0){
             navLinks[0].classList.add("navber_nav_link-active");
-        }else if(location.pathname === pathname){
+        }else if(location.pathname.indexOf(pathname) > -1){
             navLinks[i].classList.add("navber_nav_link-active");
         }else{
             navLinks[i].classList.remove("navber_nav_link-active");
